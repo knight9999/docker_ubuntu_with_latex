@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  latex:
+    build:
+      context: .
+    image: latex:latest
+    container_name: latex
+    volumes:
+      - ./work:/work
+    shm_size: '2gb'

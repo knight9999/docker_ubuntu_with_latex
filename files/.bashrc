@@ -1,1 +1,1 @@
-export TEXINPUTS=::/mnt/work/input
+export TEXINPUTS=::/work/input

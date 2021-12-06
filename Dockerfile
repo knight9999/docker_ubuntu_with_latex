@@ -1,14 +1,15 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
-MAINTAINER KENICHI NAITO
+LABEL maintainer "KENICHI NAITO"
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y
 
-RUN apt-get install -y software-properties-common python-software-properties
+# RUN apt-get install -y software-properties-common python-software-properties
+RUN apt-get install -y software-properties-common
 
-RUN apt-add-repository -y ppa:texlive-backports/ppa
+# RUN apt-add-repository -y ppa:texlive-backports/ppa
 
 RUN apt-get install -y texlive-lang-cjk
 

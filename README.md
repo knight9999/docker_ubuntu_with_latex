@@ -5,25 +5,34 @@
 `git clone`したディレクトリ(Dockerfileが存在するディレクトリ)に移動して、以下を実行します。
 
 ```
-$ docker build -t ubuntu_with_latex . --no-cache=true
+$ docker build -t latex . --no-cache=true
 ```
 
 ## コンテナの起動(Mac)
 
 ```
-$ docker run --privileged -d --name latex_server -v `pwd`/work:/mnt/work/ -it ubuntu_with_latex
+$ docker run --privileged -d --name latex -v `pwd`/work:/work/ -it latex
 ```
 
 ## ユーザーのスタイルファイル
 
-今回は、 `/mnt/work/input` にスタイルファイルを置いたので
+今回は、 `/work/input` にスタイルファイルを置いたので
 
 ```
-# export TEXINPUTS=::/mnt/work/input
+# export TEXINPUTS=::/work/input
 ```
 
 とする。
 
 ## Latexの使い方
 
-# platex hoge.tex
+```
+# platex sample.tex
+```
+
+pdf化
+
+```
+# dvipdf sample.dvi
+```
+
